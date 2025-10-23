@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "web-project",
+			"path": "web-project"
+		}
+	],
+	"settings": {}
+}
