@@ -1,8 +1,18 @@
 {
-    "stu":[
-        {"id":1001,"name":"Tom","age":18},
-        {"id":1003,"name":"Alice","age":19},
-        {"id":1004,"name":"Luly","age":20},
-        {"id":1005,"name":"Zhangziyi","age":21}
-    ]
+  "stu": [
+    {
+      "name": "Azheng",
+      "id": "1003"
+    },
+    {
+      "id": "1004",
+      "name": "Tom",
+      "age": 20
+    },
+    {
+      "id": "1005",
+      "name": "Zhangziyi",
+      "age": 21
+    }
+  ]
 }
