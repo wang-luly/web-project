@@ -1,18 +1,52 @@
 {
-  "stu": [
+  "stus": [
     {
+      "id": "1003",
       "name": "Azheng",
-      "id": "1003"
+      "age":19,
+      "classId":"1"
     },
     {
       "id": "1004",
       "name": "Tom",
-      "age": 20
+      "age": 20,
+      "classId":"1"
     },
     {
       "id": "1005",
       "name": "Zhangziyi",
-      "age": 21
+      "age": 21,
+      "classId":"1"
+    },
+    {
+      "id": "1006",
+      "name": "Tianwen",
+      "age": 20,
+      "classId":"2"
+    },
+    {
+      "id": "1007",
+      "name": "Wangluly",
+      "age": 18,
+      "classId":"2"
+    },
+    {
+      "id": "1008",
+      "name": "Jiang",
+      "age": 21,
+      "classId":"2"
+    }
+  ],
+  "classes":[
+    {
+        "id":"1",
+        "name":"web班",
+        "stuIds":["1003","1004","1005"]
+    },
+    {
+        "id":"2",
+        "name":"java班",
+        "stuIds":["1006","1007","1008"]
     }
   ]
 }
