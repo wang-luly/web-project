@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level02</title>
+</head>
+<body>
+    <button id="add">新增列表</button>
+    <ul id="itemList"></ul>
+    
+
+    <script>
+        document.querySelector('#add').addEventListener('click',()=>{
+            const ul=document.querySelector('#itemList');
+            const li=document.createElement('li');
+            li.textContent='新列表项';
+            ul.appendChild(li);
+        })
+    </script>
+</body>
+</html>

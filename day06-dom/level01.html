@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level01</title>
+</head>
+<body>
+    <span>今天天气真不错</span>
+    <button id="edit">修改文字内容</button>
+    <br><br><br>
+    <input type="text" id="newText" placeholder="请输入文本">
+    <button id="show">显示</button>
+    <p id="textContent"></p>
+
+    <script>
+        document.getElementById("edit").addEventListener("click",()=>{
+            if(document.querySelector("span").textContent=='今天天气真糟糕!!!!!!!!!'){
+                document.querySelector("span").textContent='今天天气真不错'
+            }
+            else{
+                document.querySelector("span").textContent='今天天气真糟糕!!!!!!!!!'
+            }
+        })
+        document.querySelector("#show").addEventListener("click",()=>{
+            let inputText=document.querySelector("#newText").value;
+            document.querySelector("#textContent").textContent=inputText;
+        })
+    </script>
+
+</body>
+</html>
