@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios+显示列表</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="showList">显示列表</button>
+    <ol class="listParent"></ol>
+
+    <script>
+        document.getElementById('showList').addEventListener('click', function() {
+            const listParent = document.querySelector('.listParent');
+            axios.get('https://jsonplaceholder.typicode.com/users')
+                .then(function (response) {
+                    const user = response.data;
+                    for(let i=0;i<user.length;i++){
+                        const li = document.createElement('li');
+                        li.textContent = `姓名: ${user[i].name}, 邮箱: ${user[i].email}`;
+                        listParent.appendChild(li);
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios-get</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="axios-get">axios-get</button>
+    <button id="axios-post">axios-post</button>
+
+    <script>
+        document.getElementById('axios-get').addEventListener('click', function() {
+            axios.get('https://jsonplaceholder.typicode.com/users/2')
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.error('Error fetching data:', error);
+                });
+        });
+        document.getElementById('axios-post').addEventListener('click', function() {
+            axios.post('https://jsonplaceholder.typicode.com/posts',{
+                userId:3,
+                title:"aZheng",
+                body:"myLove"
+            })
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+</body>
+</html>
