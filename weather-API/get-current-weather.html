@@ -9,10 +9,39 @@
 <body>
     <label for="city">城市：</label>
     <input type="text" id="city" placeholder="请输入城市名" required>
-    <button>获取实时天气</button>
+    <button id="getWeather">获取实时天气</button>
+    <p id="weatherResult"></p>
 
     <script>
-
+        const apiKey='d1edb0a97cbd469893b140018252410';
+        const city=document.getElementById('city');
+        const getWeather=document.getElementById('getWeather');
+        const weatherResult=document.getElementById('weatherResult');
+        getWeather.addEventListener('click',async()=>{
+            const cityName=city.value.trim();
+            if(!cityName){
+                alert('请输入城市名');
+                return;
+            }
+            weatherResult.textContent="加载中...";
+            try{
+                const response=await axios.get('https://api.weatherapi.com/v1/current.json',{
+                    params:{
+                        key:apiKey,
+                        q:cityName,
+                        lang:'zh'
+                    }
+                });
+                const data=response.data;
+                weatherResult.textContent=`${data.location.name}的当前天气：${data.current.temp_c}°C,${data.current.condition.text}`;
+            }catch(error){
+                weatherResult.textContent='获取天气信息失败，请稍后重试。';
+                console.error(error);
+            }finally{
+                city.value='';
+                city.focus();
+            }
+        });
     </script>
 </body>
 </html>
